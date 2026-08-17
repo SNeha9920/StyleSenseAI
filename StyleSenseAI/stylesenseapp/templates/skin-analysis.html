@@ -1,0 +1,353 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1">
+
+    <title>Skin Analysis - StyleSense AI</title>
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+        rel="stylesheet">
+
+    <link
+        rel="stylesheet"
+        href="{% static 'css/style.css' %}">
+
+</head>
+
+<body>
+
+<main class="main">
+
+    <h1 class="page-title">
+        Skin Analysis
+    </h1>
+
+
+    <!-- Upload -->
+
+    <div class="card-custom mb-4">
+
+        <h3 class="card-title">
+            <i class="bi bi-upload text-primary"></i>
+            Upload Selfie
+        </h3>
+
+        <p class="card-text">
+            Upload a clear front-facing image
+            for AI skin analysis.
+        </p>
+
+        <label
+            for="skinPhoto"
+            class="upload-box">
+
+            <i class="bi bi-image upload-icon"></i>
+
+            <h5>
+                Drag & Drop your photo
+            </h5>
+
+            <p class="text-muted">
+                or click to browse
+            </p>
+
+            <button class="btn btn-dark">
+                Choose Image
+            </button>
+
+            <input
+                type="file"
+                id="skinPhoto"
+                class="d-none"
+                accept="image/*"
+                data-preview="skinPreview">
+
+        </label>
+
+        <img
+            id="skinPreview"
+            class="preview-image d-none mt-3">
+
+    </div>
+
+
+    <!-- Score -->
+
+    <div class="row g-4 mb-4">
+
+        <div class="col-lg-5">
+
+            <div class="card-custom">
+
+                <h3 class="card-title">
+                    Skin Health Score
+                </h3>
+
+                <div class="text-center py-3">
+
+                    <div
+                        style="
+                        font-size:60px;
+                        font-weight:800;
+                        color:#9814ff;
+                        ">
+
+                        92
+
+                    </div>
+
+                    <span class="text-muted">
+                        Excellent
+                    </span>
+
+                </div>
+
+                <div class="mb-3">
+                    Hydration
+                    <span class="float-end">89%</span>
+
+                    <div class="progress mt-2">
+                        <div
+                            class="progress-bar"
+                            style="width:89%">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    Texture
+                    <span class="float-end">94%</span>
+
+                    <div class="progress mt-2">
+                        <div
+                            class="progress-bar"
+                            style="width:94%">
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    Brightness
+                    <span class="float-end">91%</span>
+
+                    <div class="progress mt-2">
+                        <div
+                            class="progress-bar"
+                            style="width:91%">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="col-lg-7">
+
+            <div class="card-custom h-100">
+
+                <h3 class="card-title">
+                    Detected Concerns
+                </h3>
+
+                <span class="tag">
+                    Mild Acne
+                </span>
+
+                <span class="tag">
+                    Dry Skin
+                </span>
+
+                <span class="tag">
+                    Pigmentation
+                </span>
+
+                <span class="tag">
+                    Dark Circles
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- AI Copilot -->
+
+    <div class="card-custom mb-4">
+
+        <h3 class="card-title">
+            <i class="bi bi-stars text-primary"></i>
+            AI Beauty Copilot
+        </h3>
+
+        <p>
+            Your skin appears healthy overall
+            with a strong hydration level and
+            smooth texture.
+        </p>
+
+        <p>
+            We detected mild pigmentation around
+            the cheeks along with slight dryness.
+        </p>
+
+        <p>
+            Regular sunscreen, Vitamin C serum
+            and consistent moisturizing can help
+            improve your skin appearance.
+        </p>
+
+    </div>
+
+
+    <!-- Routine -->
+
+    <div class="card-custom mb-4">
+
+        <h3 class="section-title">
+            Recommended Routine
+        </h3>
+
+        <div class="row g-4">
+
+            <div class="col-md-6">
+
+                <div class="card-custom">
+
+                    <h5>
+                        ☀️ Morning
+                    </h5>
+
+                    <p>✓ Gentle Cleanser</p>
+                    <p>✓ Vitamin C Serum</p>
+                    <p>✓ Moisturizer</p>
+                    <p>✓ SPF 50 Sunscreen</p>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-6">
+
+                <div class="card-custom">
+
+                    <h5>
+                        🌙 Night
+                    </h5>
+
+                    <p>✓ Face Wash</p>
+                    <p>✓ Niacinamide Serum</p>
+                    <p>✓ Retinol Cream</p>
+                    <p>✓ Night Moisturizer</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Ingredients -->
+
+    <div class="card-custom mb-4">
+
+        <h3 class="section-title">
+            Recommended Ingredients
+        </h3>
+
+        <span class="tag">Vitamin C</span>
+        <span class="tag">Niacinamide</span>
+        <span class="tag">Hyaluronic Acid</span>
+        <span class="tag">Retinol</span>
+        <span class="tag">Ceramides</span>
+        <span class="tag">SPF 50</span>
+
+    </div>
+
+
+    <!-- Progress -->
+
+    <div class="card-custom">
+
+        <h3 class="section-title">
+            Skin Progress
+        </h3>
+
+        <div class="mb-4">
+
+            Hydration
+            <span class="float-end">
+                89%
+            </span>
+
+            <div class="progress mt-2">
+                <div
+                    class="progress-bar"
+                    style="width:89%">
+                </div>
+            </div>
+
+        </div>
+
+        <div class="mb-4">
+
+            Texture
+            <span class="float-end">
+                94%
+            </span>
+
+            <div class="progress mt-2">
+                <div
+                    class="progress-bar"
+                    style="width:94%">
+                </div>
+            </div>
+
+        </div>
+
+        <div>
+
+            Brightness
+            <span class="float-end">
+                91%
+            </span>
+
+            <div class="progress mt-2">
+                <div
+                    class="progress-bar"
+                    style="width:91%">
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="{% static 'js/app.js' %}"></script>
+
+</body>
+
+</html>

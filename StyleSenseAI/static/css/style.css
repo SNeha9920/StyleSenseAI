@@ -1,0 +1,560 @@
+:root {
+    --primary: #9814ff;
+    --primary-dark: #7c0edb;
+    --primary-light: #f7eaff;
+
+    --text: #111111;
+    --muted: #737373;
+    --border: #e7e7e7;
+    --background: #ffffff;
+    --card: #ffffff;
+
+    --sidebar-width: 295px;
+    --radius: 15px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #fff;
+    color: var(--text);
+    font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+    font-size: 14px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+
+    width: var(--sidebar-width);
+
+    background: white;
+    border-right: 1px solid var(--border);
+
+    padding: 30px 25px;
+
+    z-index: 1000;
+}
+
+.brand {
+    color: var(--primary);
+    font-size: 27px;
+    font-weight: 800;
+    margin-bottom: 45px;
+}
+
+.nav-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    padding: 13px 12px;
+
+    border-radius: 10px;
+
+    color: #222;
+
+    font-size: 15px;
+    font-weight: 500;
+
+    transition: 0.2s;
+}
+
+.nav-link i {
+    font-size: 19px;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    background: var(--primary-light);
+    color: var(--primary);
+}
+
+.sidebar-bottom {
+    position: absolute;
+    bottom: 20px;
+    left: 22px;
+}
+
+.n-avatar {
+    width: 42px;
+    height: 42px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #202020;
+    color: white;
+}
+
+/* =========================
+   MAIN
+========================= */
+
+.main {
+    margin-left: var(--sidebar-width);
+    min-height: 100vh;
+
+    padding: 25px 45px;
+}
+
+.topbar {
+    height: 70px;
+
+    border-bottom: 1px solid var(--border);
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: 12px;
+
+    margin-bottom: 35px;
+}
+
+.topbar-user {
+    color: #6b6b6b;
+}
+
+.user-avatar {
+    width: 42px;
+    height: 42px;
+
+    background: var(--primary);
+    color: white;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-weight: 700;
+}
+
+.logout-btn {
+    border: 1px solid #ddd;
+    background: white;
+
+    border-radius: 9px;
+
+    padding: 8px 14px;
+}
+
+/* =========================
+   PAGE TITLE
+========================= */
+
+.page-title {
+    font-size: 42px;
+    font-weight: 800;
+
+    margin-bottom: 25px;
+}
+
+.section-title {
+    font-size: 22px;
+    font-weight: 750;
+    margin-bottom: 18px;
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.card-custom {
+    background: white;
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    padding: 25px;
+
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02);
+}
+
+.card-title {
+    font-size: 19px;
+    font-weight: 750;
+    margin-bottom: 8px;
+}
+
+.card-text {
+    color: var(--muted);
+}
+
+/* =========================
+   DASHBOARD
+========================= */
+
+.dashboard-card {
+    height: 175px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+}
+
+.dashboard-icon {
+    font-size: 28px;
+    margin-bottom: 18px;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.btn-purple {
+    background: var(--primary);
+    color: white;
+
+    border: none;
+
+    padding: 10px 18px;
+
+    border-radius: 8px;
+}
+
+.btn-purple:hover {
+    background: var(--primary-dark);
+    color: white;
+}
+
+.btn-outline-purple {
+    background: white;
+    color: var(--primary);
+
+    border: 1px solid var(--primary);
+
+    padding: 9px 16px;
+
+    border-radius: 8px;
+}
+
+/* =========================
+   UPLOAD
+========================= */
+
+.upload-box {
+    min-height: 220px;
+
+    border: 2px dashed #e4c8ff;
+
+    border-radius: 14px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    cursor: pointer;
+}
+
+.upload-box:hover {
+    background: #fcf7ff;
+}
+
+.upload-icon {
+    font-size: 45px;
+    color: var(--primary);
+
+    margin-bottom: 15px;
+}
+
+.preview-image {
+    max-width: 100%;
+    max-height: 350px;
+
+    border-radius: 12px;
+
+    object-fit: contain;
+}
+
+/* =========================
+   PROGRESS
+========================= */
+
+.progress {
+    height: 6px;
+    background: #e7e7e7;
+}
+
+.progress-bar {
+    background: var(--primary);
+}
+
+/* =========================
+   TAGS
+========================= */
+
+.tag {
+    display: inline-block;
+
+    background: #1d1d1d;
+    color: white;
+
+    border-radius: 20px;
+
+    padding: 5px 10px;
+
+    font-size: 11px;
+
+    margin: 3px;
+}
+
+/* =========================
+   PRODUCT
+========================= */
+
+.product-card {
+    border: 1px solid var(--border);
+    border-radius: 12px;
+
+    overflow: hidden;
+}
+
+.product-image {
+    height: 180px;
+
+    background: linear-gradient(
+        135deg,
+        #f6e8ff,
+        #fff0fb
+    );
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #999;
+}
+
+.product-body {
+    padding: 14px;
+}
+
+.product-title {
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+/* =========================
+   WARDROBE
+========================= */
+
+.clothing-image {
+    height: 170px;
+
+    background: linear-gradient(
+        135deg,
+        #f7eaff,
+        #fff0fa
+    );
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #aaa;
+}
+
+.clothing-card {
+    border: 1px solid var(--border);
+
+    border-radius: 12px;
+
+    overflow: hidden;
+}
+
+.clothing-info {
+    padding: 13px;
+}
+
+/* =========================
+   CHAT
+========================= */
+
+.chat-container {
+    min-height: 430px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 15px;
+
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 20px;
+}
+
+.chat-message {
+    padding: 14px 18px;
+
+    border-radius: 14px;
+
+    max-width: 80%;
+}
+
+.chat-ai {
+    background: var(--primary-light);
+    align-self: flex-start;
+}
+
+.chat-user {
+    background: #050505;
+    color: white;
+    align-self: flex-end;
+}
+
+/* =========================
+   SETTINGS
+========================= */
+
+.setting-row {
+    border: 1px solid var(--border);
+
+    border-radius: 10px;
+
+    padding: 15px;
+
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 10px;
+}
+
+.setting-description {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+/* =========================
+   PROFILE
+========================= */
+
+.profile-avatar {
+    width: 85px;
+    height: 85px;
+
+    border-radius: 50%;
+
+    background: #f3f3f3;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #777;
+
+    font-weight: 700;
+}
+
+/* =========================
+   HISTORY
+========================= */
+
+.stat-card {
+    border: 1px solid var(--border);
+
+    border-radius: 14px;
+
+    padding: 20px;
+}
+
+.stat-number {
+    font-size: 27px;
+    font-weight: 800;
+
+    color: var(--primary);
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+.mobile-toggle {
+    display: none;
+
+    border: none;
+    background: transparent;
+
+    font-size: 25px;
+}
+
+@media(max-width: 991px) {
+
+    .sidebar {
+        transform: translateX(-100%);
+        transition: 0.25s;
+    }
+
+    .sidebar.show {
+        transform: translateX(0);
+    }
+
+    .main {
+        margin-left: 0;
+        padding: 20px;
+    }
+
+    .mobile-toggle {
+        display: block;
+    }
+
+    .topbar {
+        justify-content: space-between;
+    }
+
+    .page-title {
+        font-size: 32px;
+    }
+}
+
+
+
+
