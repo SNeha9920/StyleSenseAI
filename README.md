@@ -1,5 +1,4 @@
 # StyleSenseAI
-# StyleSense AI
 
 **AI-powered personal styling and beauty assistant that combines skin analysis, personalized recommendations, product discovery, and virtual try-on into one intelligent experience.**
 
