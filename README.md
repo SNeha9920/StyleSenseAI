@@ -1,5 +1,8 @@
 # StyleSenseAI
+<<<<<<< HEAD
 # StyleSense AI
+=======
+>>>>>>> 54545bdb22e97544d1b4a91cf4ba51ed39542476
 
 **AI-powered personal styling and beauty assistant that combines skin analysis, personalized recommendations, product discovery, and virtual try-on into one intelligent experience.**
 
@@ -244,4 +247,8 @@ The project demonstrates how beauty and retail APIs can become more than isolate
 
 ## 👥 Team
 
+<<<<<<< HEAD
 Built with ❤️ during the hackathon by the StyleSense AI team.
+=======
+Built with ❤️ during the hackathon by the StyleSense AI team.
+>>>>>>> 54545bdb22e97544d1b4a91cf4ba51ed39542476
