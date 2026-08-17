@@ -1,0 +1,469 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1">
+
+<title>Wardrobe</title>
+
+<link
+href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+rel="stylesheet">
+
+<link
+href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+rel="stylesheet">
+
+<link
+rel="stylesheet"
+href="{% static 'css/style.css' %}">
+
+</head>
+
+<body>
+
+<main class="main">
+
+<h1 class="page-title">
+Wardrobe
+</h1>
+
+
+<!-- Statistics -->
+
+<div class="row g-3 mb-4">
+
+<div class="col-md-3">
+
+<div class="stat-card">
+
+<div>Total Items</div>
+
+<div class="stat-number">
+82
+</div>
+
+</div>
+
+</div>
+
+<div class="col-md-3">
+
+<div class="stat-card">
+
+<div>Categories</div>
+
+<div class="stat-number">
+12
+</div>
+
+</div>
+
+</div>
+
+<div class="col-md-3">
+
+<div class="stat-card">
+
+<div>Favorite Color</div>
+
+<div class="stat-number">
+Black
+</div>
+
+</div>
+
+</div>
+
+<div class="col-md-3">
+
+<div class="stat-card">
+
+<div>Outfit Score</div>
+
+<div class="stat-number">
+89%
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- Search -->
+
+<div class="card-custom mb-4">
+
+<div class="row g-2">
+
+<div class="col-md-9">
+
+<input
+id="wardrobeSearch"
+class="form-control"
+placeholder="Search clothes..."
+onkeyup="searchWardrobe()">
+
+</div>
+
+<div class="col-md-3">
+
+<select class="form-select">
+
+<option>Category</option>
+<option>Shirts</option>
+<option>Pants</option>
+<option>Shoes</option>
+
+</select>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- Add -->
+
+<div class="card-custom mb-4">
+
+<h3 class="section-title">
+Add Clothing Item
+</h3>
+
+<label class="upload-box">
+
+<i class="bi bi-upload upload-icon"></i>
+
+<h5>
+Upload Clothing Image
+</h5>
+
+<p class="text-muted">
+Click or drag & drop your clothing image
+</p>
+
+<button class="btn btn-purple">
+Choose Image
+</button>
+
+<input
+type="file"
+class="d-none"
+accept="image/*">
+
+</label>
+
+</div>
+
+
+<!-- Wardrobe -->
+
+<div class="card-custom mb-4">
+
+<h3 class="section-title">
+My Wardrobe
+</h3>
+
+<div class="row g-3">
+
+<!-- Item -->
+
+<div class="col-lg-3 col-md-4 col-6 wardrobe-item">
+
+<div class="clothing-card">
+
+<div class="clothing-image">
+Image
+</div>
+
+<div class="clothing-info">
+
+<strong>
+White Linen Shirt
+</strong>
+
+<div class="text-muted">
+StyleNova
+</div>
+
+<small>
+Shirt
+</small>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="col-lg-3 col-md-4 col-6 wardrobe-item">
+
+<div class="clothing-card">
+
+<div class="clothing-image">
+Image
+</div>
+
+<div class="clothing-info">
+
+<strong>
+Blue Jeans
+</strong>
+
+<div class="text-muted">
+UrbanWear
+</div>
+
+<small>
+Pants
+</small>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="col-lg-3 col-md-4 col-6 wardrobe-item">
+
+<div class="clothing-card">
+
+<div class="clothing-image">
+Image
+</div>
+
+<div class="clothing-info">
+
+<strong>
+White Sneakers
+</strong>
+
+<div class="text-muted">
+StreetFit
+</div>
+
+<small>
+Shoes
+</small>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="col-lg-3 col-md-4 col-6 wardrobe-item">
+
+<div class="clothing-card">
+
+<div class="clothing-image">
+Image
+</div>
+
+<div class="clothing-info">
+
+<strong>
+Black Jacket
+</strong>
+
+<div class="text-muted">
+TrendHive
+</div>
+
+<small>
+Jacket
+</small>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="col-lg-3 col-md-4 col-6 wardrobe-item">
+
+<div class="clothing-card">
+
+<div class="clothing-image">
+Image
+</div>
+
+<div class="clothing-info">
+
+<strong>
+Leather Belt
+</strong>
+
+<div class="text-muted">
+ClassicCo
+</div>
+
+<small>
+Accessory
+</small>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="col-lg-3 col-md-4 col-6 wardrobe-item">
+
+<div class="clothing-card">
+
+<div class="clothing-image">
+Image
+</div>
+
+<div class="clothing-info">
+
+<strong>
+Formal Blazer
+</strong>
+
+<div class="text-muted">
+EliteWear
+</div>
+
+<small>
+Blazer
+</small>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- AI collections -->
+
+<div class="card-custom">
+
+<h3 class="section-title">
+AI Outfit Collections
+</h3>
+
+<div class="row g-3">
+
+<div class="col-md-4">
+
+<div class="product-card">
+
+<div class="product-image">
+Office
+</div>
+
+<div class="product-body">
+
+<strong>
+Office
+</strong>
+
+<p class="text-muted">
+AI generated office outfits.
+</p>
+
+<button class="btn btn-purple">
+View Collection
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="col-md-4">
+
+<div class="product-card">
+
+<div class="product-image">
+Weekend
+</div>
+
+<div class="product-body">
+
+<strong>
+Casual Weekend
+</strong>
+
+<p class="text-muted">
+Casual weekend outfits.
+</p>
+
+<button class="btn btn-purple">
+View Collection
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="col-md-4">
+
+<div class="product-card">
+
+<div class="product-image">
+Wedding
+</div>
+
+<div class="product-body">
+
+<strong>
+Wedding
+</strong>
+
+<p class="text-muted">
+Wedding outfits.
+</p>
+
+<button class="btn btn-purple">
+View Collection
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</main>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="{% static 'js/app.js' %}"></script>
+
+</body>
+
+</html>

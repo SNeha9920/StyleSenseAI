@@ -1,0 +1,307 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Profile</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+</head>
+
+<body>
+
+<main class="main">
+
+<h1 class="page-title">
+Profile
+</h1>
+
+<form method="POST" action="{% url 'profile' %}">
+{% csrf_token %}
+
+<!-- Header -->
+
+<div class="card-custom mb-4">
+
+<div class="d-flex align-items-center gap-4">
+
+<div class="profile-avatar">
+  {{ user_data.firstname|slice:":1" }}{{ user_data.lastname|slice:":1" }}
+</div>
+
+<div>
+
+<h2>
+  {{ user_data.firstname }} {{ user_data.lastname }}
+</h2>
+
+<p class="text-muted">
+  AI Fashion Enthusiast
+</p>
+
+<div style="width:400px">
+
+Profile Completion
+
+<div class="progress mt-2">
+
+<div class="progress-bar" style="--progress-width: {{ profile.completion_percentage|default:82 }}%; width: var(--progress-width);">
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- Personal Information -->
+
+<div class="card-custom mb-4">
+
+<h3 class="section-title">
+Personal Information
+</h3>
+
+<div class="row g-3">
+
+<div class="col-md-6">
+  <label class="form-label">First Name</label>
+  <input class="form-control" name="firstname" placeholder="First Name" value="{{ user_data.firstname|default:'' }}">
+</div>
+
+<div class="col-md-6">
+  <label class="form-label">Last Name</label>
+  <input class="form-control" name="lastname" placeholder="Last Name" value="{{ user_data.lastname|default:'' }}">
+</div>
+
+<div class="col-md-6">
+  <label class="form-label">Email</label>
+  <input class="form-control" name="email" type="email" placeholder="Email" value="{{ user_data.email|default:'' }}">
+</div>
+
+<div class="col-md-6">
+  <label class="form-label">Phone</label>
+  <input class="form-control" name="phone" placeholder="Phone" value="{{ user_data.phone|default:'' }}">
+</div>
+
+<div class="col-md-6">
+  <label class="form-label">Location</label>
+  <input class="form-control" name="location" placeholder="Location" value="{{ profile.location|default:'' }}">
+</div>
+
+<div class="col-md-6">
+  <label class="form-label">Date of Birth</label>
+  <input class="form-control" name="dob" type="date" value="{{ profile.dob|date:'Y-m-d'|default:'' }}">
+</div>
+
+</div>
+
+</div>
+
+
+<div class="row g-4 mb-4">
+
+<!-- Body Profile -->
+
+<div class="col-md-6">
+
+<div class="card-custom">
+
+<h3 class="section-title">
+Body Profile
+</h3>
+
+<input class="form-control mb-3" name="height" placeholder="Height (cm)" value="{{ profile.height|default:'' }}">
+
+<input class="form-control mb-3" name="weight" placeholder="Weight (kg)" value="{{ profile.weight|default:'' }}">
+
+<select class="form-select mb-3" name="body_type">
+
+<option value="">Body Type</option>
+
+<option value="Rectangle" {% if profile.body_type == 'Rectangle' %}selected{% endif %}>Rectangle</option>
+
+<option value="Hourglass" {% if profile.body_type == 'Hourglass' %}selected{% endif %}>Hourglass</option>
+
+<option value="Pear" {% if profile.body_type == 'Pear' %}selected{% endif %}>Pear</option>
+
+</select>
+
+<select class="form-select" name="fit_preference">
+
+<option value="">Fit Preference</option>
+
+<option value="Slim" {% if profile.fit_preference == 'Slim' %}selected{% endif %}>Slim</option>
+
+<option value="Regular" {% if profile.fit_preference == 'Regular' %}selected{% endif %}>Regular</option>
+
+<option value="Relaxed" {% if profile.fit_preference == 'Relaxed' %}selected{% endif %}>Relaxed</option>
+
+</select>
+
+</div>
+
+</div>
+
+
+<!-- Skin Profile -->
+
+<div class="col-md-6">
+
+<div class="card-custom">
+
+<h3 class="section-title">
+Skin Profile
+</h3>
+
+<select class="form-select mb-3" name="skin_tone">
+
+<option value="">Skin Tone</option>
+
+<option value="Warm Beige" {% if profile.skin_tone == 'Warm Beige' %}selected{% endif %}>Warm Beige</option>
+
+<option value="Fair" {% if profile.skin_tone == 'Fair' %}selected{% endif %}>Fair</option>
+
+<option value="Medium" {% if profile.skin_tone == 'Medium' %}selected{% endif %}>Medium</option>
+
+</select>
+
+<select class="form-select mb-3" name="skin_type">
+
+<option value="">Skin Type</option>
+
+<option value="Dry" {% if profile.skin_type == 'Dry' %}selected{% endif %}>Dry</option>
+
+<option value="Oily" {% if profile.skin_type == 'Oily' %}selected{% endif %}>Oily</option>
+
+<option value="Combination" {% if profile.skin_type == 'Combination' %}selected{% endif %}>Combination</option>
+
+</select>
+
+<textarea class="form-control" name="skin_concerns" rows="4" placeholder="Skin Concerns">{{ profile.skin_concerns|default:'' }}</textarea>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- Style Preferences -->
+
+<div class="card-custom mb-4">
+
+<h3 class="section-title">
+Style Preferences
+</h3>
+
+<div class="row g-3">
+
+<div class="col-md-3">
+<button type="button" class="btn btn-outline-purple w-100 {% if 'Minimal' in profile.style_preferences %}active{% endif %}">
+Minimal
+</button>
+</div>
+
+<div class="col-md-3">
+<button type="button" class="btn btn-outline-purple w-100 {% if 'Casual' in profile.style_preferences %}active{% endif %}">
+Casual
+</button>
+</div>
+
+<div class="col-md-3">
+<button type="button" class="btn btn-outline-purple w-100 {% if 'Formal' in profile.style_preferences %}active{% endif %}">
+Formal
+</button>
+</div>
+
+<div class="col-md-3">
+<button type="button" class="btn btn-outline-purple w-100 {% if 'Streetwear' in profile.style_preferences %}active{% endif %}">
+Streetwear
+</button>
+</div>
+
+</div>
+
+</div>
+
+
+<!-- Measurements -->
+
+<div class="card-custom mb-4">
+
+<h3 class="section-title">
+Measurements
+</h3>
+
+<div class="row g-3">
+
+<div class="col-md-4">
+<input class="form-control" name="chest" placeholder="Chest (cm)" value="{{ profile.chest|default:'' }}">
+</div>
+
+<div class="col-md-4">
+<input class="form-control" name="waist" placeholder="Waist (cm)" value="{{ profile.waist|default:'' }}">
+</div>
+
+<div class="col-md-4">
+<input class="form-control" name="hip" placeholder="Hip (cm)" value="{{ profile.hip|default:'' }}">
+</div>
+
+<div class="col-md-4">
+<input class="form-control" name="shoulder" placeholder="Shoulder (cm)" value="{{ profile.shoulder|default:'' }}">
+</div>
+
+<div class="col-md-4">
+<input class="form-control" name="sleeve_length" placeholder="Sleeve Length (cm)" value="{{ profile.sleeve_length|default:'' }}">
+</div>
+
+<div class="col-md-4">
+<input class="form-control" name="shoe_size" placeholder="Shoe Size" value="{{ profile.shoe_size|default:'' }}">
+</div>
+
+</div>
+
+</div>
+
+
+<div class="text-end">
+
+<button type="reset" class="btn btn-outline-purple me-2">
+Reset
+</button>
+
+<button type="submit" class="btn btn-purple">
+Save Changes
+</button>
+
+</div>
+
+</form>
+
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="{% static 'js/app.js' %}"></script>
+
+</body>
+
+</html>
